@@ -1,0 +1,52 @@
+import React from 'react'
+
+import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
+import Hidden from '@material-ui/core/Hidden'
+import IconButton from '@material-ui/core/IconButton'
+import Logo from './Logo'
+import MenuDrawer from './MenuDrawer'
+import SearchBar from './SearchBar'
+import SearchRoundedIcon from '@material-ui/icons/SearchRounded'
+
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(theme => ({
+  navbarContainer: {
+    margin: '0 auto',
+    height: '6rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+}))
+
+const NavBar = () => {
+  const classes = useStyles()
+  return (
+    <Container className={classes.navbarContainer} maxWidth="lg">
+      <Grid container alignItems="center" justify="space-between">
+        <Grid item xs={8} sm={2}>
+          <Logo />
+        </Grid>
+        <Hidden xsDown>
+          <Grid item sm={9} container justify="center">
+            <SearchBar />
+          </Grid>
+        </Hidden>
+        <Hidden smUp>
+          <Grid item xs={2} sm={1}>
+            <IconButton color="primary" variant="contained">
+              <SearchRoundedIcon />
+            </IconButton>
+          </Grid>
+        </Hidden>
+        <Grid item xs={1} sm={1} container justify="flex-end">
+          <MenuDrawer />
+        </Grid>
+      </Grid>
+    </Container>
+  )
+}
+
+export default NavBar
