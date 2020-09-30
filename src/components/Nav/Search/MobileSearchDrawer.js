@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 
 import Drawer from '@material-ui/core/Drawer'
-import MenuIcon from '@material-ui/icons/Menu'
-import { Container, IconButton } from '@material-ui/core'
+import SearchRoundedIcon from '@material-ui/icons/SearchRounded'
+import IconButton from '@material-ui/core/IconButton'
 
-const MenuDrawer = () => {
+import MobileSearchBar from './MobileSearchBar'
+
+const MobileSearchDrawer = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
 
   const openDrawer = () => setDrawerOpen(true)
@@ -12,14 +14,14 @@ const MenuDrawer = () => {
 
   return (
     <div>
-      <IconButton color="primary" variant="contained" onClick={openDrawer}>
-        <MenuIcon />
+      <IconButton color="primary" onClick={openDrawer}>
+        <SearchRoundedIcon />
       </IconButton>
       <Drawer anchor="top" open={drawerOpen} onClose={closeDrawer}>
-        <Container>{/* <MoviesMenu /> */} MOvies</Container>
+        <MobileSearchBar closeDrawer={closeDrawer} />
       </Drawer>
     </div>
   )
 }
 
-export default MenuDrawer
+export default MobileSearchDrawer

@@ -3,11 +3,10 @@ import React from 'react'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
-import IconButton from '@material-ui/core/IconButton'
 import Logo from './Logo'
-import MenuDrawer from './MenuDrawer'
-import SearchBar from './SearchBar'
-import SearchRoundedIcon from '@material-ui/icons/SearchRounded'
+import MenuDrawer from './Menu/MenuDrawer'
+import SearchBar from './Search/SearchBar'
+import MobileSearchDrawer from './Search/MobileSearchDrawer'
 
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -36,9 +35,7 @@ const NavBar = () => {
         </Hidden>
         <Hidden smUp>
           <Grid item xs={2} sm={1}>
-            <IconButton color="primary" variant="contained">
-              <SearchRoundedIcon />
-            </IconButton>
+            <MobileSearchDrawer />
           </Grid>
         </Hidden>
         <Grid item xs={1} sm={1} container justify="flex-end">
