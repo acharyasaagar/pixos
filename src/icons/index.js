@@ -1,0 +1,1 @@
+export { default as PixosLogo } from './PixosLogo'

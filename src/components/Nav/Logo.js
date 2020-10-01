@@ -2,6 +2,8 @@ import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
 
+import { PixosLogo } from '../../icons/index'
+
 const useStyles = makeStyles(theme => ({
   logo: {
     width: '100px',
@@ -11,11 +13,7 @@ const useStyles = makeStyles(theme => ({
 
 const Logo = () => {
   const classes = useStyles()
-  return (
-    <div>
-      <img className={classes.logo} src="/static/pixos.svg" alt="Pixos Logo" />
-    </div>
-  )
+  return <PixosLogo className={classes.logo} />
 }
 
 export default Logo
