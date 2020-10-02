@@ -36,11 +36,12 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     borderRadius: 0,
-    fontSize: '1rem',
-    paddingLeft: '0.8em',
-    paddingRight: '0.8em',
+    fontSize: '0.9rem',
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
     boxShadow: 'none',
     textTransform: 'capitalize',
+    fontWeight: 400,
   },
 }))
 

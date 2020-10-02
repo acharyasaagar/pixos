@@ -55,10 +55,10 @@ let theme = createMuiTheme({
     },
     h6: {
       fontFamily: SANS_FONT_FAMILY,
-      fontWeight: 600,
+      fontWeight: 500,
       fontSize: '1rem',
       lineHeight: 1.5,
-      letterSpacing: '0.0625em',
+      letterSpacing: '0.0325em',
     },
     body1: {
       fontFamily: SANS_FONT_FAMILY,
@@ -76,10 +76,10 @@ let theme = createMuiTheme({
     },
     button: {
       fontFamily: SANS_FONT_FAMILY,
-      fontWeight: 400,
+      fontWeight: 600,
       fontSize: '0.75rem',
       lineHeight: 1.5,
-      letterSpacing: '0.035em',
+      letterSpacing: '0.0935em',
     },
     caption: {
       fontFamily: SANS_FONT_FAMILY,
