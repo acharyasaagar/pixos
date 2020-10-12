@@ -5,12 +5,17 @@ const SANS_FONT_FAMILY = "'Poppins', 'Helvetica', 'Arial', sans-serif"
 let theme = createMuiTheme({
   fontFamily: SANS_FONT_FAMILY,
   palette: {
+    common: {
+      black: '#1E212B',
+      white: '#fff',
+    },
     background: {
       paper: '#3A4665',
       default: '#1E212B',
     },
     primary: {
       main: '#F9F871',
+      dark: '#F2F010',
       contrastText: '#1E212B',
     },
     text: {
