@@ -23,21 +23,22 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const CarouselTile = () => {
+const CarouselTile = props => {
+  const { title, subtitle, link } = props
   const classes = useStyles()
   return (
     <Card className={classes.tileContainer}>
-      <CardActionArea className={classes.actionArea}>
+      <CardActionArea className={classes.actionArea} component="a" href={link}>
         <Grid container justify="space-between" alignItems="center">
-          <Grid item>
+          <Grid item xs={11}>
             <Typography variant="h5" component="h5" color="primary">
-              The hunting of bly manor
+              {title}
             </Typography>
             <Typography variant="body1" component="p" color="primary">
-              Oct 29, 2020
+              {subtitle}
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid item xs={1}>
             <PlayCircleFilledIcon fontSize="large" color="primary" />
           </Grid>
         </Grid>
