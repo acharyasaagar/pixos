@@ -9,6 +9,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     overflow: 'hidden',
     width: '100%',
+    borderRadius: theme.spacing(0.5),
   },
 }))
 

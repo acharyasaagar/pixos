@@ -60,7 +60,7 @@ let theme = createMuiTheme({
     },
     h6: {
       fontFamily: SANS_FONT_FAMILY,
-      fontWeight: 500,
+      fontWeight: 600,
       fontSize: '1rem',
       lineHeight: 1.5,
       letterSpacing: '0.0325em',
