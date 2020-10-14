@@ -28,7 +28,11 @@ const CarouselImage = props => {
   const classes = useStyles()
   return (
     <div className={classes.imageWrapper}>
-      <img src={src} alt={alt} className={classes.image} />
+      <img
+        src={src || '/static/svgs/grayimg.svg'}
+        alt={alt || 'image'}
+        className={classes.image}
+      />
     </div>
   )
 }

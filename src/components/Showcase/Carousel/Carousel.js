@@ -14,9 +14,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Carousel = props => {
-  const {
-    carousel: { tile = {}, img = {} },
-  } = props
+  const { tile = {}, img = {} } = props.carousel || {}
   const classes = useStyles()
   return (
     <div className={classes.carousel}>

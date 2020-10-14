@@ -38,9 +38,13 @@ const CarouselTile = props => {
               {subtitle}
             </Typography>
           </Grid>
-          <Grid item xs={1}>
-            <PlayCircleFilledIcon fontSize="large" color="primary" />
-          </Grid>
+          {link && (
+            <>
+              <Grid item xs={1}>
+                <PlayCircleFilledIcon fontSize="large" color="primary" />
+              </Grid>
+            </>
+          )}
         </Grid>
       </CardActionArea>
     </Card>

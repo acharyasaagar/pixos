@@ -39,14 +39,13 @@ const useStyles = makeStyles(theme => ({
 
 const ShowcaseCard = props => {
   const classes = useStyles()
-  const {
-    card: { body, img },
-  } = props
+  const { body, img } = props.card || {}
+
   return (
     <Card className={classes.card}>
       <CardActionArea
         component="a"
-        href={body.link}
+        href={body?.link}
         className={classes.cardActionArea}
       >
         <Grid
@@ -59,7 +58,11 @@ const ShowcaseCard = props => {
           <Grid item xs={3} md={5}>
             <div className="imageContainer">
               <div className={classes.imageWrapper}>
-                <img src={img.src} alt={img.alt} className={classes.image} />
+                <img
+                  src={img?.src || '/static/svgs/grayimg.svg'}
+                  alt={img?.alt || 'image'}
+                  className={classes.image}
+                />
               </div>
             </div>
           </Grid>
@@ -72,14 +75,18 @@ const ShowcaseCard = props => {
             direction="column"
           >
             <Grid item>
-              <Typography variant="h6">{body.title}</Typography>
-              <Typography variant="caption">{body.subtitle}</Typography>
+              <Typography variant="h6">{body?.title}</Typography>
+              <Typography variant="caption">{body?.subtitle}</Typography>
             </Grid>
             <Grid item container alignItems="center">
-              <Typography variant="button" className={classes.watchButton}>
-                Watch trailer
-              </Typography>
-              <PlayCircleFilledIcon />
+              {body?.link && (
+                <>
+                  <Typography variant="button" className={classes.watchButton}>
+                    Watch trailer
+                  </Typography>
+                  <PlayCircleFilledIcon />
+                </>
+              )}
             </Grid>
           </Grid>
         </Grid>
