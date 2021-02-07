@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles(theme => ({
   imageWrapper: {
     width: '100%',
+    height: '100%',
     position: 'relative',
-    paddingTop: '75%',
     overflow: 'hidden',
   },
   image: {
@@ -15,8 +15,7 @@ const useStyles = makeStyles(theme => ({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    minWidth: '100%',
-    maxWidth: '100%',
+    width: '100%',
     minHeight: '100%',
     objectFit: 'cover',
     objectPosition: 'center',

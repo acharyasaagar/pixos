@@ -13,17 +13,11 @@ const useStyles = makeStyles(theme => ({
       justifyContent: 'center',
     },
   },
-  showcaseCard: {
-    marginBottom: theme.spacing(10),
-    '&:last-child': {
-      marginBottom: 0,
-    },
-  },
 }))
 
 const ShowcaseCarouselGrid = props => {
   const classes = useStyles()
-  const { carousel, card } = props
+  const { carousel, cards } = props
   return (
     <Grid
       container
@@ -43,9 +37,9 @@ const ShowcaseCarouselGrid = props => {
         direction="column"
         justify="space-between"
       >
-        {[card, card, card].map(c => (
+        {cards.map(card => (
           <Grid item>
-            <ShowcaseCard card={c}></ShowcaseCard>
+            <ShowcaseCard card={card}></ShowcaseCard>
           </Grid>
         ))}
       </Grid>

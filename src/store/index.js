@@ -1,5 +1,23 @@
-import { createStore } from 'redux'
+import thunk from 'redux-thunk'
 
-const store = createStore((state = { hello: 'world' }, action) => state)
+import { applyMiddleware, createStore } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import combinedReducer from './reducers'
+
+const store = createStore(
+  combinedReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+)
 
 export default store
+
+/* 
+{
+  searchKeyword: '',
+  upcomingMovies: [],
+  trendingMovies: [],
+  popularMovies: [],
+  trendingPeople: [],
+  popularPeople: [],
+}
+*/
