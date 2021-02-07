@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import ShowcaseCarousel from './Carousel/Carousel'
 import ShowcaseCard from './ShowcaseCard'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   showcaseGrid: {
     overflow: 'hidden',
     [theme.breakpoints.down('md')]: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ShowcaseCarouselGrid = props => {
+const ShowcaseCarouselGrid = (props) => {
   const classes = useStyles()
   const { carousel, cards } = props
   return (
@@ -37,8 +37,8 @@ const ShowcaseCarouselGrid = props => {
         direction="column"
         justify="space-between"
       >
-        {cards.map(card => (
-          <Grid item>
+        {cards.map((card, index) => (
+          <Grid item key={index}>
             <ShowcaseCard card={card}></ShowcaseCard>
           </Grid>
         ))}

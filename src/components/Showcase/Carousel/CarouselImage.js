@@ -2,7 +2,7 @@ import React from 'react'
 
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   imageWrapper: {
     width: '100%',
     height: '100%',
@@ -19,10 +19,11 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100%',
     objectFit: 'cover',
     objectPosition: 'center',
+    transition: 'opacity 2s',
   },
 }))
 
-const CarouselImage = props => {
+const CarouselImage = (props) => {
   const { src, alt } = props
   const classes = useStyles()
   return (

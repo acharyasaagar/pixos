@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   tileContainer: {
     position: 'absolute',
     bottom: 0,
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const CarouselTile = props => {
+const CarouselTile = (props) => {
   const { title, subtitle, link } = props
   const classes = useStyles()
   return (
@@ -31,7 +31,12 @@ const CarouselTile = props => {
       <CardActionArea className={classes.actionArea} component="a" href={link}>
         <Grid container justify="space-between" alignItems="center">
           <Grid item xs={11}>
-            <Typography variant="h5" component="h5" color="primary">
+            <Typography
+              variant="h5"
+              component="h5"
+              color="primary"
+              className={classes.fadeText}
+            >
               {title}
             </Typography>
             <Typography variant="body1" component="p" color="primary">

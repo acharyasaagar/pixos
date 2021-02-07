@@ -1,23 +1,13 @@
-import thunk from 'redux-thunk'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import { applyMiddleware, createStore } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import combinedReducer from './reducers'
+import upcomingMovies from './slices/upcomingMovies'
 
-const store = createStore(
-  combinedReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-)
+const rootReducer = combineReducers({
+  upcomingMovies,
+})
+
+const store = configureStore({
+  reducer: rootReducer,
+})
 
 export default store
-
-/* 
-{
-  searchKeyword: '',
-  upcomingMovies: [],
-  trendingMovies: [],
-  popularMovies: [],
-  trendingPeople: [],
-  popularPeople: [],
-}
-*/

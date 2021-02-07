@@ -8,7 +8,7 @@ import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   card: {
     marginBottom: theme.spacing(1),
   },
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ShowcaseCard = props => {
+const ShowcaseCard = (props) => {
   const classes = useStyles()
   const { body, img } = props.card || {}
 

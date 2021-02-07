@@ -1,8 +1,20 @@
 import Axios from '../Axios'
 
-const getUpcomingMovies = async (requestConfig = {}) => {
-  const movies = await Axios.get('/movie/upcoming', requestConfig)
-  return movies.data
+export const fetchUpcomingMovies = async (requestConfig = {}) => {
+  console.log('hello')
+  const response = await Axios.get('/movie/upcoming', requestConfig)
+  console.log(response)
+  return response
 }
 
-export default { getUpcomingMovies }
+export const formatMovie = (movie) => ({
+  body: {
+    title: movie?.title,
+    subtitle: movie?.release_date,
+    link: `/${movie?.id}`,
+  },
+  img: {
+    src: `http://image.tmdb.org/t/p/w1280/${movie?.backdrop_path}`,
+    alt: movie?.title,
+  },
+})

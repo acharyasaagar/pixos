@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import CarouselImage from './CarouselImage'
 import CarouselTile from './CarouselTile'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   carousel: {
     position: 'relative',
     overflow: 'hidden',
@@ -17,13 +17,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Carousel = props => {
-  const { tile = {}, img = {} } = props.carousel || {}
+const Carousel = (props) => {
+  const { body = {}, img = {} } = props.carousel || {}
   const classes = useStyles()
   return (
     <div className={classes.carousel}>
       <CarouselImage {...img} />
-      <CarouselTile {...tile} />
+      <CarouselTile {...body} />
     </div>
   )
 }
