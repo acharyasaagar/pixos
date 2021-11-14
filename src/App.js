@@ -1,12 +1,12 @@
 import React from 'react'
-
 import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Nav from './components/Nav/Navbar'
+import UpcomingMovies from './screens/home/UpcomingMovies'
+
 import { makeStyles } from '@material-ui/core/styles'
 
-import Nav from './Nav/Navbar'
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     width: '100vw',
     minHeight: '100vh',
@@ -21,7 +21,7 @@ const App = () => {
       <CssBaseline></CssBaseline>
       <Nav />
       <Container className={classes.container}>
-        <h1>Upcoming Movies</h1>
+        <UpcomingMovies />
       </Container>
     </>
   )
