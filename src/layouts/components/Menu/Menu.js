@@ -22,12 +22,12 @@ const useStyles = makeStyles((theme) => ({
 const Menu = (props) => {
   const { closeDrawer } = props
   const classes = useStyles()
-  const categoryListItems = MOVIE_CATEGORIES.map((item) => makeListItem(item))
+  const categoryListItems = MOVIE_CATEGORIES.map((item) =>
+    makeListItem(item, '/movies')
+  )
   const genreListItems = MOVIE_GENRES.map((item) =>
     makeListItem(item, '/genres')
   )
-
-  console.log(categoryListItems, genreListItems)
 
   return (
     <div className={classes.menuWrapper}>

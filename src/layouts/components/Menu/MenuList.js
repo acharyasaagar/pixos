@@ -1,7 +1,9 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   menuListContainer: {
@@ -34,7 +36,9 @@ const MenuList = (props) => {
       <Grid container spacing={2} className={classes.menuListItemsContainer}>
         {listItems.map(({ label, href }) => (
           <Grid key={href} item>
-            {label}
+            <Button component={Link} to={href}>
+              {label}
+            </Button>
           </Grid>
         ))}
       </Grid>
