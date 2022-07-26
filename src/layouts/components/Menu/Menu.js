@@ -1,15 +1,14 @@
 import React from 'react'
-
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import LocalMoviesIcon from '@material-ui/icons/LocalMovies'
-
 import MenuTopbar from './MenuTopbar'
 import MenuList from './MenuList'
-
+import { paramCase } from 'param-case'
 import { makeStyles } from '@material-ui/core/styles'
+import { MOVIE_CATEGORIES, MOVIE_GENRES } from '../../../constants'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   menuWrapper: {
     minHeight: '100vh',
     minWidth: '90vw',
@@ -20,32 +19,15 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Menu = props => {
+const Menu = (props) => {
   const { closeDrawer } = props
-
-  const movieListItems = ['Popular', 'Now Playing', 'Upcoming', 'Top Rated']
-  const genreListItems = [
-    'Action',
-    'Adventure',
-    'Animation',
-    'Comedy',
-    'Crime',
-    'Documentary',
-    'Drama',
-    'Family',
-    'Fantasy',
-    'Western',
-    'Horror',
-    'Music',
-    'Mystery',
-    'Romance',
-    'War',
-    'Science and Fiction',
-    'TV Movie',
-    'Thriller',
-  ]
-
   const classes = useStyles()
+  const categoryListItems = MOVIE_CATEGORIES.map((item) => makeListItem(item))
+  const genreListItems = MOVIE_GENRES.map((item) =>
+    makeListItem(item, '/genres')
+  )
+
+  console.log(categoryListItems, genreListItems)
 
   return (
     <div className={classes.menuWrapper}>
@@ -65,7 +47,7 @@ const Menu = props => {
               <MenuList
                 title="Movies"
                 Icon={LocalMoviesIcon}
-                listItems={movieListItems}
+                listItems={categoryListItems}
               ></MenuList>
             </Grid>
             <Grid item>
@@ -81,5 +63,10 @@ const Menu = props => {
     </div>
   )
 }
+
+const makeListItem = (itemName, hrefPrefix = '') => ({
+  label: itemName,
+  href: `${hrefPrefix}/${paramCase(itemName)}`,
+})
 
 export default Menu

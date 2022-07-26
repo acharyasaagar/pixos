@@ -1,2 +1,26 @@
-export const apiUrl = 'https://api.themoviedb.org/3'
-export const apiKey = 'd9dbf53e99fd477a1b9c4ae5257a669d'
+export const MOVIE_CATEGORIES = [
+  'Popular',
+  'Now Playing',
+  'Upcoming',
+  'Top Rated',
+]
+export const MOVIE_GENRES = [
+  'Action',
+  'Adventure',
+  'Animation',
+  'Comedy',
+  'Crime',
+  'Documentary',
+  'Drama',
+  'Family',
+  'Fantasy',
+  'Western',
+  'Horror',
+  'Music',
+  'Mystery',
+  'Romance',
+  'War',
+  'Science and Fiction',
+  'TV Movie',
+  'Thriller',
+]

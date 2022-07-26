@@ -1,11 +1,9 @@
 import React from 'react'
-
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   menuListContainer: {
     maxWidth: '100%',
   },
@@ -17,9 +15,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const MenuList = props => {
+const MenuList = (props) => {
   const { Icon, title, listItems } = props
-
   const classes = useStyles()
 
   return (
@@ -35,9 +32,9 @@ const MenuList = props => {
         </Grid>
       </Grid>
       <Grid container spacing={2} className={classes.menuListItemsContainer}>
-        {listItems.map(listItem => (
-          <Grid key={listItem} item>
-            {listItem}
+        {listItems.map(({ label, href }) => (
+          <Grid key={href} item>
+            {label}
           </Grid>
         ))}
       </Grid>

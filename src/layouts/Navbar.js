@@ -3,14 +3,14 @@ import React from 'react'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
-import Logo from './Logo'
-import MenuDrawer from './Menu/MenuDrawer'
-import SearchBar from './Search/SearchBar'
-import MobileSearchDrawer from './Search/MobileSearchDrawer'
+import Logo from './components/Logo'
+import MenuDrawer from './components/Menu/MenuDrawer'
+import SearchBar from './components/Search/SearchBar'
+import MobileSearchDrawer from './components/Search/MobileSearchDrawer'
 
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   navbarContainer: {
     margin: '0 auto',
     height: '6rem',
