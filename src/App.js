@@ -5,11 +5,11 @@ import Navbar from './layouts/Navbar'
 import { makeStyles } from '@material-ui/core/styles'
 import { Routes, Route } from 'react-router-dom'
 
-const HomeView = React.lazy(() => import('./views/home'))
-const NowPlayingView = React.lazy(() => import('./views/now-playing'))
-const PopularView = React.lazy(() => import('./views/popular'))
-const TopRatedView = React.lazy(() => import('./views/top-rated'))
-const UpcomingView = React.lazy(() => import('./views/upcoming'))
+const HomeView = React.lazy(() => import('./routes/Home'))
+const NowPlayingView = React.lazy(() => import('./routes/NowPlaying'))
+const PopularView = React.lazy(() => import('./routes/Popular'))
+const TopRatedView = React.lazy(() => import('./routes/TopRated'))
+const UpcomingView = React.lazy(() => import('./routes/Upcoming'))
 
 const useStyles = makeStyles((theme) => ({
   container: {
