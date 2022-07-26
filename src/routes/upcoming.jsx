@@ -4,7 +4,7 @@ import { useAsync } from '../hooks/use-async'
 
 const fetchUpcomingMovies = async () => fetchMovies('/movie/top_rated')
 
-const UpcomingMoviesRouteLoader = () => {
+const UpcomingMoviesRoute = () => {
   const { error, status } = useAsync(fetchUpcomingMovies)
 
   if (status === 'pending') return <p>pending</p>
@@ -13,4 +13,4 @@ const UpcomingMoviesRouteLoader = () => {
   return <p>something went wrong</p>
 }
 
-export default UpcomingMoviesRouteLoader
+export default UpcomingMoviesRoute

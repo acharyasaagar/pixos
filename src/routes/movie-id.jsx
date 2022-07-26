@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { fetchMovie } from '../apis/movie-api'
 import { useAsync } from '../hooks/use-async'
 
-const MovieDetailsRouteLoader = () => {
+const MovieDetailsRoute = () => {
   const { movieId } = useParams()
   const fetchMovieById = React.useCallback(() => fetchMovie(movieId), [movieId])
   const { data: movie, error, status } = useAsync(fetchMovieById)
@@ -15,4 +15,4 @@ const MovieDetailsRouteLoader = () => {
   return null
 }
 
-export default MovieDetailsRouteLoader
+export default MovieDetailsRoute
