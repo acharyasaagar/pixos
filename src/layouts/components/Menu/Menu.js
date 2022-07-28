@@ -22,11 +22,12 @@ const useStyles = makeStyles((theme) => ({
 const Menu = (props) => {
   const { closeDrawer } = props
   const classes = useStyles()
-  const categoryListItems = MOVIE_CATEGORIES.map((item) =>
-    makeListItem(item, '/movies')
+  const categoryListItems = MOVIE_CATEGORIES.map((category) =>
+    makeListItem({ name: category }, '/movies')
   )
-  const genreListItems = MOVIE_GENRES.map((item) =>
-    makeListItem(item, '/genres')
+
+  const genreListItems = MOVIE_GENRES.map((genre) =>
+    makeListItem(genre, '/genres')
   )
 
   return (
@@ -64,9 +65,10 @@ const Menu = (props) => {
   )
 }
 
-const makeListItem = (itemName, hrefPrefix = '') => ({
-  label: itemName,
-  href: `${hrefPrefix}/${paramCase(itemName)}`,
+const makeListItem = ({ id, name }, hrefPrefix = '') => ({
+  id: id || name,
+  label: name,
+  href: `${hrefPrefix}/${id || paramCase(name)}`,
 })
 
 export default Menu
