@@ -9,6 +9,7 @@ const MovieGrid = ({ movies }) => {
         return (
           <Grid item key={movie.title}>
             <MovieCard
+              id={movie.id}
               key={movie.title}
               title={movie.title}
               subtitle={movie.subtitle}

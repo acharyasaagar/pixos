@@ -2,12 +2,14 @@ import React from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 import { makeStyles } from '@material-ui/core/styles'
+import { useNavigate } from 'react-router-dom'
 
 const WatchTrailerButton = () => {
   const classes = useStyles()
@@ -34,18 +36,22 @@ const TrendingIndexAvatar = ({ index }) => {
 }
 
 const MovieCard = (props) => {
-  const { title, subtitle, imgSrc, trendingIndex, trailerButton } = props
+  const { title, subtitle, imgSrc, trendingIndex, trailerButton, id } = props
   const classes = useStyles()
+  const navigate = useNavigate()
+  const navigateToMovie = () => navigate(`/movie/${id}`)
 
   return (
     <Card className={classes.root} component="article">
-      <CardMedia
-        component="img"
-        alt={title}
-        height="195"
-        image={imgSrc}
-        title={title}
-      />
+      <CardActionArea onClick={navigateToMovie}>
+        <CardMedia
+          component="img"
+          alt={title}
+          height="195"
+          image={imgSrc}
+          title={title}
+        />
+      </CardActionArea>
       <Grid container wrap="nowrap">
         {trendingIndex && (
           <Grid item xs={3}>
@@ -81,9 +87,10 @@ const MovieCard = (props) => {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 280,
-    borderTopRightRadius: 25,
-    borderBottomLeftRadius: 25,
+    width: 280,
+    height: 280,
+    // borderTopRightRadius: 25,
+    // borderBottomLeftRadius: 25,
   },
   'MuiCardContent-root': {
     padding: 20,
