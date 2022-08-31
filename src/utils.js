@@ -3,7 +3,17 @@ export const getFullImagePath = (path, width = '500') => {
 }
 
 export const getMovieData = (movie = {}, options = {}) => {
-  const { id, title, backdrop_path, poster_path, release_date } = movie
+  const {
+    id,
+    title,
+    backdrop_path,
+    poster_path,
+    release_date,
+    genres,
+    tagline,
+    runtime: duration,
+    overview: description,
+  } = movie
   const { backdropWidth = '1280', posterWidth = '500' } = options
   const backdrop = getFullImagePath(backdrop_path, backdropWidth)
   const poster = getFullImagePath(poster_path, posterWidth)
@@ -15,5 +25,9 @@ export const getMovieData = (movie = {}, options = {}) => {
     backdrop,
     poster,
     releaseDate,
+    description,
+    genres,
+    tagline,
+    duration,
   }
 }
