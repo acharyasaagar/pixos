@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 import { ArrowBack } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 
-const MovieNotFound = () => {
+const MovieNotFound = ({ message }) => {
   return (
     <div
       style={{
@@ -20,7 +20,9 @@ const MovieNotFound = () => {
         <Typography variant="h1" style={{ fontSize: 96 }}>
           404
         </Typography>
-        <Typography variant="h1">Sorry there is nothing here!</Typography>
+        <Typography variant="h1">
+          {message || 'Sorry there is nothing here!'}
+        </Typography>
         <Button
           variant="contained"
           size="large"
