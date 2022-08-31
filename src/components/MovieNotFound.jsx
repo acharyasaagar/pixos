@@ -13,7 +13,7 @@ const MovieNotFound = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#F9F871',
+        color: '#FFF',
       }}
     >
       <div style={{ textAlign: 'center' }}>
